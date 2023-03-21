@@ -1,6 +1,10 @@
 const uuid = require('uuid/v1');
 const Product = require('../models/Product');
 
+exports.getIndex = (req, res, next) => {
+  res.sendFile(__dirname + '../../front/html/index.html');
+}
+
 exports.getAllProducts = (req, res, next) => {
   Product.find().then(
     (products) => {
